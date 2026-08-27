@@ -1,13 +1,38 @@
-id: cross-domain-food-tasks
-kind: cross_domain
-input:
-  text: "траты на еду и закрытые задачи за неделю"
-expect:
+# New cross_domain harness cases - feat/harness-cross-domain-19
+# Ensure this file's YAML document separators / surrounding content match the project's existing format.
+
+- kind: cross_domain
+  id: cross_domain_en_01
+  prompt: >
+    Plan my day: add groceries to a shopping list and create a calendar event for 2pm.
   looks_cross: true
----
-id: cross-domain-balance-only
-kind: cross_domain
-input:
-  text: "покажи баланс карт"
-expect:
+
+- kind: cross_domain
+  id: cross_domain_en_02
+  prompt: >
+    Add a task to my kanban board only — do not create any calendar events.
+  looks_cross: false
+
+- kind: cross_domain
+  id: cross_domain_en_03
+  prompt: >
+    Move my sleep schedule earlier and set a reminder to call mom tomorrow morning.
+  looks_cross: true
+
+- kind: cross_domain
+  id: cross_domain_ru_01
+  prompt: >
+    План на день: добавь покупку продуктов и назначь встречу в 14:00.
+  looks_cross: true
+
+- kind: cross_domain
+  id: cross_domain_mixed_01
+  prompt: >
+    Create a meeting at 10am and also add a task to my shopping list for milk.
+  looks_cross: true
+
+- kind: cross_domain
+  id: cross_domain_mixed_02
+  prompt: >
+    только канбан: добавь задачу на доску, не создавай события в календаре
   looks_cross: false
